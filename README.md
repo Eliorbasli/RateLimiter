@@ -18,9 +18,9 @@ A C# class to limit how many times a function can be called in a certain period.
 public RateLimiter(Func<object, Task> func, int maxCalls, double period)
 ```
 
-func: The function you want to limit.
-maxCalls: Max number of calls allowed in the time period.
-period: The time period (in seconds).
+- func: The function you want to limit.
+- maxCalls: Max number of calls allowed in the time period.
+- period: The time period (in seconds).
 
 
 Example: 
