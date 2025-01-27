@@ -18,3 +18,22 @@ A C# class to limit how many times a function can be called in a certain period.
 public RateLimiter(Func<object, Task> func, int maxCalls, double period)
 ```
 
+func: The function you want to limit.
+maxCalls: Max number of calls allowed in the time period.
+period: The time period (in seconds).
+
+
+Example: 
+```csharp
+public static async Task SendGetRequestAsync(object url)
+{
+    // Send GET request to URL
+}
+
+// Create a RateLimiter (10 calls per minute)
+var rateLimiter = new RateLimiter(SendGetRequestAsync, 10, 60);
+
+// Call the function
+await rateLimiter.Perform("https://api.example.com");
+```
+
